@@ -63,13 +63,14 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            echo "Pipeline finished"
-            sh "docker compose logs --tail=50 || true"
-        }
-        failure {
-            echo "Pipeline failed!"
-        }
+   post {
+    always {
+        echo "Pipeline finished"
+        sh "docker compose logs || true" // <- no --tail
     }
+    failure {
+        echo "Pipeline failed!"
+    }
+}
+}
 }
