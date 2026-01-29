@@ -16,7 +16,7 @@ stage("Cloning") {
                    } 
             }
         }
-        stage('build') {
+        stage('build-Frontend') {
             steps {
                 script {
                    dir ('Frontend'){
@@ -25,6 +25,14 @@ stage("Cloning") {
                 }
             }
         }
+       stage('Build Backend') {
+    steps {
+        dir('Backend') {
+            sh 'mvn clean package -DskipTests'
+        }
+    }
+}
+
         
         stage('deploying') {
             steps {
