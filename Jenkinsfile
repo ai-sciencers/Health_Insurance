@@ -19,7 +19,7 @@ stage("Cloning") {
         stage('build') {
             steps {
                 script {
-                    docker_build("health-insurance", "latest", "ai-sciencers")
+                    sh "docker build -t health-insurance:latest ."
                 }
             }
         }
