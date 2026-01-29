@@ -12,7 +12,7 @@ pipeline {
 stage("Cloning") { 
             steps {        
                  script{      
-                clone('https://github.com/ai-sciencers/health-insurance.git','main') 
+                clone('https://github.com/ai-sciencers/Health_Insurance.git','main') 
                    } 
             }
         }
